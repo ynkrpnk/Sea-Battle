@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --cell-size: 50px;
+  --border-color: #000000;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: 40px repeat(10, var(--cell-size));
+  grid-template-rows: 40px auto;
+}
+
+.cell.label,
+.numbers div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-color); 
+  font-weight: bold;
+}
+
+.cell.corner {
+  background-color: #000;
+  border: 1px solid var(--border-color);
+}
+
+.board-wrapper {
+  display: contents;
+}
+
+.numbers {
+  display: grid;
+  grid-template-rows: repeat(10, var(--cell-size));
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, var(--cell-size));
+  grid-template-rows: repeat(10, var(--cell-size));
+  grid-column: 2 / 12;
+
+  border: 1px solid var(--border-color); 
+
+  background:
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+  background-size: var(--cell-size) var(--cell-size);
+}
+
+
+.ship {
+  border: 2px solid #000;
+}
+
+.purple {
+  background: purple;
+}
+.green {
+  background: rgb(45, 228, 45);
+} 
+.blue {
+  background: blue;
+}
+.red {
+  background: red;
+}
+
+/* Координаты кораблей */
+.s1 {
+  grid-column: 1 / 3;
+}
+.s2 {
+  grid-column: 4;
+  grid-row: 1 / 4;
+}
+.s3 {
+  grid-column: 7 / 11;
+
+}
+.s4 {
+  grid-row: 3 / 7;
+}
+.s5 {
+  grid-column: 6 / 9;
+  grid-row: 3;
+}
+.s6 {
+  grid-column: 10;
+  grid-row: 3 / 5;
+}
+.s7 {
+  grid-column: 5 / 11;
+  grid-row: 10;
+}
+
+.s8 {
+ grid-row: 8;
+  grid-column: 1 / 3;
+}
+.s9 {
+  grid-column: 6;
+  grid-row: 6 / 8;
+}
+.s10 {
+  grid-column: 10;
+  grid-row: 6 / 9;
+}
+
+
